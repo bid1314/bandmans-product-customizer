@@ -1,0 +1,297 @@
+/* System Status Page */
+.cpc-status-page {
+    margin: 20px 0;
+}
+
+.cpc-status-actions {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.cpc-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Status Sections */
+.status-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.status-section h2 {
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.status-section h2 .toggle-section {
+    cursor: pointer;
+    color: #72777c;
+}
+
+.status-section h2 .toggle-section:hover {
+    color: #23282d;
+}
+
+/* System Tests Table */
+#system-tests {
+    border-spacing: 0;
+    width: 100%;
+    clear: both;
+    margin: 0;
+}
+
+#system-tests th {
+    padding: 8px 10px;
+    text-align: left;
+    background: #f8f9fa;
+}
+
+#system-tests td {
+    padding: 8px 10px;
+    vertical-align: middle;
+}
+
+#system-tests tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.pass {
+    background-color: #46b450;
+    color: #fff;
+}
+
+.status-badge.fail {
+    background-color: #dc3232;
+    color: #fff;
+}
+
+.status-badge.warning {
+    background-color: #ffb900;
+    color: #fff;
+}
+
+/* Error Messages */
+.error-message {
+    color: #dc3232;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Sample Product Section */
+.sample-product-info {
+    margin-top: 15px;
+}
+
+.sample-product-info p {
+    margin: 5px 0;
+}
+
+.sample-product-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Log Viewer */
+.log-viewer {
+    position: relative;
+    margin-top: 15px;
+}
+
+.log-viewer pre {
+    background: #f8f9fa;
+    border: 1px solid #e2e4e7;
+    border-radius: 4px;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.log-viewer .refresh-logs {
+    position: absolute;
+    top: -30px;
+    right: 0;
+}
+
+.no-logs {
+    color: #72777c;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Tooltips */
+.ui-tooltip {
+    padding: 8px;
+    position: absolute;
+    z-index: 9999;
+    max-width: 300px;
+    background: #333;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    font-size: 12px;
+}
+
+/* Notices */
+.notice {
+    margin: 15px 0;
+}
+
+.notice p {
+    margin: 0.5em 0;
+    padding: 2px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .cpc-status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-section {
+        margin-bottom: 20px;
+    }
+
+    #system-tests th:last-child,
+    #system-tests td:last-child {
+        display: none;
+    }
+
+    .sample-product-actions {
+        flex-direction: column;
+    }
+
+    .sample-product-actions .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .log-viewer pre {
+        max-height: 300px;
+    }
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.loading:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Button States */
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Section Toggle Animation */
+.section-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Custom Scrollbar for Log Viewer */
+.log-viewer pre::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.log-viewer pre::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.log-viewer pre::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.log-viewer pre::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Test Details */
+.test-details {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #0073aa;
+    display: none;
+}
+
+.test-details.visible {
+    display: block;
+}
+
+.test-details h4 {
+    margin: 0 0 10px 0;
+}
+
+.test-details pre {
+    margin: 0;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    overflow-x: auto;
+}
+
+/* Documentation Links */
+.doc-link {
+    text-decoration: none;
+    color: #0073aa;
+}
+
+.doc-link:hover {
+    color: #00a0d2;
+}
+
+.doc-link .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}

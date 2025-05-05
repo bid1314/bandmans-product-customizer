@@ -1,0 +1,233 @@
+/* Elementor Widget Styles */
+.elementor-widget-product-configurator {
+    --cpc-primary-color: #0073aa;
+    --cpc-secondary-color: #23282d;
+    --cpc-border-color: #ddd;
+    --cpc-success-color: #46b450;
+    --cpc-error-color: #dc3232;
+    --cpc-warning-color: #ffb900;
+}
+
+/* Layout Styles */
+.elementor-widget-product-configurator .product-configurator-wrapper {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+.elementor-widget-product-configurator .product-configurator-wrapper.layout-vertical {
+    flex-direction: column;
+}
+
+.elementor-widget-product-configurator .product-configurator-wrapper.layout-horizontal {
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .elementor-widget-product-configurator .product-configurator-wrapper.layout-horizontal {
+        flex-direction: column;
+    }
+}
+
+/* Preview Section */
+.elementor-widget-product-configurator .product-preview-container {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.elementor-widget-product-configurator .product-preview {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.elementor-widget-product-configurator .product-preview img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Options Section */
+.elementor-widget-product-configurator .configuration-options {
+    flex: 1;
+    min-width: 0;
+}
+
+.elementor-widget-product-configurator .layer-section {
+    margin-bottom: 20px;
+}
+
+.elementor-widget-product-configurator .layer-section h3 {
+    margin: 0 0 15px;
+    padding: 0;
+}
+
+.elementor-widget-product-configurator .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+}
+
+/* Option Items */
+.elementor-widget-product-configurator .option-item {
+    position: relative;
+    cursor: pointer;
+    border: 2px solid var(--cpc-border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-product-configurator .option-item:hover {
+    border-color: var(--cpc-primary-color);
+}
+
+.elementor-widget-product-configurator .option-item.selected {
+    border-color: var(--cpc-primary-color);
+    box-shadow: 0 0 0 2px var(--cpc-primary-color);
+}
+
+/* Color Options */
+.elementor-widget-product-configurator .color-option {
+    aspect-ratio: 1;
+}
+
+.elementor-widget-product-configurator .color-preview {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+/* Pattern Options */
+.elementor-widget-product-configurator .pattern-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Form Styles */
+.elementor-widget-product-configurator .rfq-form {
+    margin-top: 30px;
+}
+
+.elementor-widget-product-configurator .form-row {
+    margin-bottom: 15px;
+}
+
+.elementor-widget-product-configurator .form-row label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.elementor-widget-product-configurator input[type="text"],
+.elementor-widget-product-configurator input[type="email"],
+.elementor-widget-product-configurator input[type="tel"],
+.elementor-widget-product-configurator input[type="number"],
+.elementor-widget-product-configurator select,
+.elementor-widget-product-configurator textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--cpc-border-color);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.elementor-widget-product-configurator input:focus,
+.elementor-widget-product-configurator select:focus,
+.elementor-widget-product-configurator textarea:focus {
+    border-color: var(--cpc-primary-color);
+    outline: none;
+}
+
+/* File Upload */
+.elementor-widget-product-configurator .file-upload {
+    position: relative;
+    border: 2px dashed var(--cpc-border-color);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.elementor-widget-product-configurator .file-upload:hover {
+    border-color: var(--cpc-primary-color);
+}
+
+.elementor-widget-product-configurator .file-preview {
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+/* Messages */
+.elementor-widget-product-configurator .elementor-message {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.elementor-widget-product-configurator .elementor-message-success {
+    background: var(--cpc-success-color);
+    color: #fff;
+}
+
+.elementor-widget-product-configurator .elementor-message-danger {
+    background: var(--cpc-error-color);
+    color: #fff;
+}
+
+.elementor-widget-product-configurator .elementor-message-warning {
+    background: var(--cpc-warning-color);
+    color: #fff;
+}
+
+/* Loading States */
+.elementor-widget-product-configurator .elementor-loading {
+    position: relative;
+    min-height: 100px;
+}
+
+.elementor-widget-product-configurator .elementor-loading:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--cpc-primary-color);
+    border-radius: 50%;
+    animation: elementor-rotation 1.2s infinite linear;
+}
+
+@keyframes elementor-rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .elementor-widget-product-configurator .options-grid {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+}
+
+/* Editor Styles */
+.elementor-control-section_product_configurator {
+    margin-top: 15px;
+}
+
+.elementor-control-product_id .elementor-control-input-wrapper {
+    max-width: none;
+}
+
+.elementor-control-preview_size .elementor-control-input-wrapper {
+    width: 100%;
+}
